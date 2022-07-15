@@ -2,8 +2,8 @@ package level1;
 
 import java.util.*;
 import java.io.*;
-
-public class Main1978 {
+//소수 개수
+public class Main1978 { 
 	public static void main(String[] args) {
 
 		Scanner n = new Scanner(System.in);
