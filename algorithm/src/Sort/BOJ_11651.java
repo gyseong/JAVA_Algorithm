@@ -2,10 +2,9 @@ package algorithm.src.Sort;
 
 import java.util.*;
 import java.io.*;
-import java.awt.*;
 //BOJ_11651
 
-public class Main {
+public class BOJ_11651 {
     public static void main(String[]args) throws IOException {
 
         BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
