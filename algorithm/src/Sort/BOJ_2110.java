@@ -3,7 +3,7 @@ package algorithm.src.Sort;
 import java.util.*;
 import java.io.*;
 //BOJ_2110
-public class Main3 {
+public class BOJ_2110 {
     public static void main(String[] args) throws IOException {
 
         BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
