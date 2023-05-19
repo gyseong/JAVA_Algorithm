@@ -1,4 +1,4 @@
-package BFSDFS;
+package algorithm.src.BFSDFS;
 
 import java.io.*;
 import java.util.*;
