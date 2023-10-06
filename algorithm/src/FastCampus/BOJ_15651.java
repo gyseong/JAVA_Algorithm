@@ -32,6 +32,7 @@ public class BOJ_15651 {
         m = Integer.parseInt(st.nextToken());
         selected = new int[n + 1];
 
+        //1번 원소부터 M번째 원소를 조건에 맞게 고르는 모든 방법을 탐색해줘
         ref_cnc(1);
         System.out.println(sb.toString());
     }
