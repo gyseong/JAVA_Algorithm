@@ -10,7 +10,7 @@ public class BOJ_14888 {
     public static int n, max, min;
 
     static int calculator() {
-        int value = arr[0];
+        int value = arr[1];
         for (int i = 1; i <= n-1; i++) {
             if (order[i] == 1) {
                 value = value + arr[i + 1];
@@ -57,14 +57,14 @@ public class BOJ_14888 {
 
         StringTokenizer st = new StringTokenizer(br.readLine());
         arr = new int[n+1];
-        math = new int[4];
+        math = new int[5];
         order = new int[n+1];
 
         for (int i = 1; i <= n; i++) {
             arr[i] = Integer.parseInt(st.nextToken());
         }
         st = new StringTokenizer(br.readLine());
-        for (int i = 1; i <= n; i++) order[i] = Integer.parseInt(st.nextToken());
+        for (int i = 1; i <= 4; i++) math[i] = Integer.parseInt(st.nextToken());
         max = Integer.MIN_VALUE;
         min = Integer.MAX_VALUE;
 
