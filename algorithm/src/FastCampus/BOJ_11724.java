@@ -34,6 +34,12 @@ public class BOJ_11724 {
         System.out.println(count);
     }
     public static void dfs(int x){
+        Arrays.sort(arr, new Comparator<int[]>(){
+            @Override
+            public int compare(int[] o1, int[] o2){
+                return o1[0]-o2[0];
+            }
+        });
         visited[x] = true;
 
         for(int i=1;i<n+1;i++){
