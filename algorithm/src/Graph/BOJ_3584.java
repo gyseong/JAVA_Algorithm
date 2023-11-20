@@ -81,7 +81,6 @@ public class BOJ_3584 {
             if(y==par) continue;
             parent[y] = x;
             dfs(y,x);
-            count+=1;
         }
     }
 }
