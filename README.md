@@ -1,1 +1,1 @@
-# DailyStudyforJava
+# Algorithm Study everyday!!
