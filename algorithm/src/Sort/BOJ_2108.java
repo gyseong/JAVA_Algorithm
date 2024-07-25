@@ -3,70 +3,52 @@ package algorithm.src.Sort;
 import java.util.*;
 import java.io.*;
 
+// 통계학
 public class BOJ_2108 {
     public static void main(String[] args) throws IOException {
-
         BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
 
-        ArrayList<Integer> list = new ArrayList<>();
-        HashMap<Integer, Integer> hash = new HashMap<>();
+        int n = Integer.parseInt(br.readLine());
 
-        int a = Integer.parseInt(br.readLine());
+        int[] arr = new int[n];
+        int[] count = new int[8001];
 
-        double sum = 0;
-
-        for (int i = 0; i < a; i++) {
-            int b = Integer.parseInt(br.readLine());
-            sum += (double) b;
-            list.add(b);
-        }
-        Collections.sort(list);
-        int max = Collections.max(list);
-        int min = Collections.min(list);
-
-        if (max < 0 && min < 0) {
-            min = Math.abs(min);
+        int sum = 0;
+        for(int i=0;i<n;i++) {
+            arr[i] = Integer.parseInt(br.readLine());
+            sum+=arr[i];
+            count[arr[i]+4000]++;
         }
 
-        else if (max > 0 && min > 0) {
-            min = min * -1;
-        }
+        Arrays.sort(arr);
 
-        else {
-            max = Math.abs(max);
-            min = Math.abs(min);
-        }
+        // 산술평균
+        System.out.println((int)Math.round((double)sum/n));
 
-        double k = sum / a;
-        int avg = (int) Math.round(k);
-        int mid = list.get(a / 2);
-        int mode = 0;
-        int range = max+min;
+        // 중앙값
+        System.out.println(arr[n/2]);
 
-        for(int num : list){
-            hash.put(num, hash.getOrDefault(num,0)+1);
-        }
+        // 최빈값
+        int max = 0;
+        int max1 =0;
 
-        int number= 0;
-        for(int key: hash.values()){
-            number = Math.max(number, key);
-        }
+        boolean check = false;
 
-        list.clear();
-        for(int i : hash.keySet()){
-            if(hash.get(i)==number){
-                list.add(i);
+        for(int i=arr[0]+4000;i<=arr[n-1]+4000;i++) {
+            if(count[i]>0) {
+                if(max<count[i]) {
+                    max = count[i];
+                    max1 = i-4000;
+                    check = true;
+                }
+                else if(max==count[i] && check) {
+                    max1 = i-4000;
+                    check = false;
+                }
             }
         }
-        if(list.size()>=2){
-            mode = list.get(1);
-        }else{
-            mode = list.get(0);
-        }
-
-        System.out.println(avg);
-        System.out.println(mid);
-        System.out.println(mode);
-        System.out.println(range);
+        System.out.println(max1);
+        // 범위
+        System.out.println(arr[n-1]-arr[0]);
     }
 }
